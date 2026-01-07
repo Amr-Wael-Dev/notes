@@ -10,6 +10,32 @@
 - HAVING clause filters groups, runs after GROUP BY, and can contain aggregations.
   - WHERE -> Remove rows
   - HAVING -> Remove groups
+- SIMILAR TO allows for regex matching
+- CONCAT or || are used for concatenation
+- Always prefer JOINs over nested queries
+- Use nested queries:
+  - When you need aggregation BEFORE comparison
+  - When you need NOT EXISTS logic
+- For nested queries, start with the outer query while keeping the mested query in Natural-Language, then replace it with actual SQL/
+- Nested queries rules:
+  - ALL: The expression must be true for all rows in the sub-query.
+  - ANY: The expression must be true for at least one row in the sub-query.
+  - IN: Equivalent to ANY.
+  - EXISTS: At least one row is returned without comparing it to an attribute in outer query.
+- The LATERAL operator allows a nested query to reference attributes in other nested queries that precede it (according to position in the query). You can think of it like a for loop that allows you to invoke another query for each tuple in a table.
+- Common Table Expressions (CTEs):
+  - Specify a temporary result set that can then be referenced by another part of that query.
+  - Alternative to nested queries, views, and explicit temp tables.
+  - WITH cteName (col1, col2) AS (...)
+- Window Functions:
+  - Performs a calculation across a set of tuples that are related to the current tuple, without collapsing them into a single output tuple, to support running, ranks, and moving averages.
+  - FUNC-NAME( ... ) OVER ( ... )
+  - Special window functions:
+    - ROW_NUMBER(): # of the current row
+    - RANK(): Order position of the current row
+  - The OVER keyword specifies how to group together tuples when computing the window function.
+  - Use PARTITION BY to specify group.
+- 
 ---
 # References
 - [CMU Intro to Database Systems (15-445/645 - Fall 2025)](https://youtube.com/playlist?list=PLSE8ODhjZXjYMAgsGH-GtY5rJYZ6zjsd5&si=TTVsBz0ncg3ptPG3)
