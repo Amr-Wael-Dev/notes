@@ -35,6 +35,12 @@
     - RANK(): Order position of the current row
   - The OVER keyword specifies how to group together tuples when computing the window function.
   - Use PARTITION BY to specify group.
+- DB Layers:
+  - Query Planning (SQL App)
+  - Operator Execution
+  - Access Methods
+  - Buffer Pool Manager
+  - Disk Manager
 - 
 ---
 # References
