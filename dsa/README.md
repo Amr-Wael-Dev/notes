@@ -4,7 +4,7 @@
 - The MinStack or similar problems can be solved by having another stack for the minimum values.
 - Stacks can be used for postfix/prefix/balancing problems.
 - A Doubly-Linked List can be used for least/most used item.
-- 
+- Binary search can be used for finding values in defined ranges.
 ---
 # Stars
 - Daily temperatures
